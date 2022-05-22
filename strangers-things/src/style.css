@@ -1,0 +1,182 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(60, 57, 57)
+}
+body {
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+li, a {
+  font-weight: 800;
+}
+
+.edit-p {
+  padding: 0px;
+  background: orange;
+  color: black;
+}
+
+a {
+  color: rgb(246, 232, 232);
+  text-decoration: none;
+  padding: 6px;
+  
+  
+}
+
+a:hover {
+  background-color: rgb(54, 54, 54);
+}
+
+#nav-links {
+  height: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  color: rgb(107, 105, 105);
+  align-items: center;
+}
+
+
+#nav-logo {
+  background-color: red;
+  width: 50px;
+}
+
+p {
+  height: 22px;
+  
+}
+
+.post-single-title,
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#seller,
+.location {
+  font-size: 15px;
+}
+
+.post-single-container {
+  padding: 0px 0px 4px 4px;
+  margin: 5px;
+  box-shadow: 0px 8px;
+}
+
+#title-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button {
+  height: 30px;
+  color: white;
+  margin-top: 1px;
+  font-family: "Playfair Display", serif;
+  font-family: "Source Code Pro", monospace;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(54, 54, 54);
+}
+
+#posts-nav {
+  display: flex;
+  flex-direction: row;
+  padding:5px;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+input {
+  height: 30px;
+  margin-left: 5px;
+  font-family: "Playfair Display", serif;
+  font-family: "Source Code Pro", monospace;
+}
+
+.description {
+  font-size: 15px;
+}
+
+#new-post-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.page-title {
+  color: rgb(128, 0, 0);
+  font-size: 3vw;
+ padding: 10px;
+}
+
+#inbox {
+  background-color: #455050;
+  margin-top: 0px;
+  border-top-left-radius: 1.5px;
+  border-top-right-radius: 1.5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#message {
+  height: 50%;
+  width: 100px;
+}
+
+#message-content {
+  height: max-content;
+  background-color: #5bc236;
+  border-radius: 5px;
+  width: 250px;
+  padding: 0 10px;
+  margin-top: 3px;
+  margin-left: 4px;
+  padding-right: 5px;
+}
+
+#sender {
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 25vw;
+  border-radius: 0px;
+  margin-left: 4px;
+  margin-right: 5px;
+}
+
+#inbox-container {
+  background-color: gray;
+  float: left;
+  border-radius: 1.5px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 58px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#user-posts {
+  float: right;
+  margin-top: 0px;
+  margin-right: 30px;
+}
+
+.profile-body {
+  background-color: orange;
+  text-align: start;
+}
