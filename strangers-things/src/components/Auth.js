@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import {  useHistory } from "react-router-dom";
-import { callApi } from "../api/API"; //API import 
+import { API } from "../api/API"; //API import 
 
 const Auth = (props) => {
   // const USERID = `https://strangers-things.herokuapp.com/api/2202-ftb-et-web-pt/users/`;
-  // const RegisteredAPI = `${USERID}register`;
-  // const loggedin = `${USERID}login`;
-  // const API_USER = `${USERID}me`;
+
   const {method, setToken} = props;
   // console.log({method, setToken});
   const history = useHistory();
@@ -24,11 +22,11 @@ const Auth = (props) => {
 
 
   return (
-    <div id="register-fields">
+    <div >
       <h3 className="page-title">{title}</h3>
       <form onSubmit={async (event) => {
     event.preventDefault();
-    const data = await callApi({
+    const data = await API({
       url: `/users/${method}`,
       body: { user: { username, password } },
       method: "POST",

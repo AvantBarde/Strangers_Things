@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Auth from "./components/Auth";
 import  Posts  from "./components/Posts";
-  import  SinglePost  from "./components/SinglePost";
+  import  Post  from "./components/Post";
   import  NewPosts  from "./components/NewPosts";
  import  NavigationBar  from "./components/NavigationBar";
  import  Home  from "./components/Home";
 
-import { callApi } from "./api/API";
+import { API } from "./api/API";
 import "../src/style.css";
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
   const [posts, setPosts] = useState([]);
 
   const fetchUserData = async (token) => {
-    const { data } = await callApi({
+    const { data } = await API({
       url: "/users/me",
       token,
     });
@@ -28,7 +28,7 @@ const App = () => {
 
   const fetchPosts = async () => {
     const { data: { posts },
- } = await callApi({
+ } = await API({
       url: "/posts",
     });
     return posts;
@@ -83,7 +83,7 @@ const App = () => {
         </Route>
         {/* Using :postId in my use Params to access dynamic route value  */}
         <Route path="/posts/:postId">
-          <SinglePost posts={posts} token={token} />
+          <Post posts={posts} token={token} />
         </Route>
         <Route path="/register">
           <Auth method="register" setToken={setToken} setUserData={setUserData}

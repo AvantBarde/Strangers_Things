@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { callApi } from "../api/API";
+import { API } from "../api/API";
 //UseParams dynamically changes the route paramater of a route path
 // Recall from here: https://stackoverflow.com/questions/60998386/using-the-useparams-hook-in-react
 import { useHistory, useParams } from "react-router-dom";
@@ -96,7 +96,7 @@ const NewPosts = (props) => {
         
       const {
         data: { post },
-      } = await callApi({
+      } = await API({
         //`/posts/${postId}` or `/posts`
         url: API_URL,
         method: method,
@@ -113,7 +113,8 @@ const NewPosts = (props) => {
       });
       if (editPost) {
         //includes the posts im editing with the current posts
-        const filteredPosts = posts.filter((post) => post._id !== postId);
+        const filteredPosts = posts.filter(
+          (post) => post._id !== postId);
         // all the posts plus the current posts
         setPosts([...filteredPosts, post]);
         console.log(filteredPosts)

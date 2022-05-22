@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { callApi } from "../api/API";
+import { API } from "../api/API";
 
-const SinglePost = (props) => {
+const Post = (props) => {
 
   const { posts, token } = props;
   console.log({posts, myToken:token});
@@ -15,7 +15,7 @@ const SinglePost = (props) => {
     const API_URL = `/posts/${postId}/messages`;
     event.preventDefault();
     try {
-      await callApi({
+      await API({
         url: API_URL,
         method: "post",
         token: token,
@@ -56,4 +56,4 @@ const SinglePost = (props) => {
   );
 };
 
-export default SinglePost;
+export default Post;

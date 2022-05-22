@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory, Fragment } from "react-router-dom";
-import { callApi } from "../api/API";
+import { API } from "../api/API";
 
 const cruD = "DELETE";
 
@@ -41,10 +41,10 @@ const Posts = (props) => {
   const handleSubmit = async (postId, e) => {
     // './posts/mypost._id'
     const API_URL = `/posts/${postId}`;
-    e.preventDefault();
+    // e.preventDefault();
     try {
-      //callApi from my api page
-      await callApi({
+      //API from my api page
+      await API({
         url: API_URL,
         method: cruD,
         token: token,

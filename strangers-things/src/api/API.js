@@ -3,7 +3,7 @@ export const COHORT_NAME = "2202-ftb-et-web-pt";
 export const API_URL = BASE_URL + COHORT_NAME;
 
 
-export const callApi = async (props) => {
+export const API = async (props) => {
  const { url, method, token, body } = props;
   console.log( { url, method, token, body });
   try {

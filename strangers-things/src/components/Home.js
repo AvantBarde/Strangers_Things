@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { callApi } from "../api/API";
+import { API } from "../api/API";
 
 const Home = (props) => {
   const { userData, token } = props
@@ -13,7 +13,7 @@ const Home = (props) => {
   const handleSubmit = async (postId) => {
     const API_URL = `/posts/${postId}`;
     try {
-      await callApi({
+      await API({
         url: API_URL,
         method: "delete",
         token: token,

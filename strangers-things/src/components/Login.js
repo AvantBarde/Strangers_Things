@@ -1,26 +1,23 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-//  const BASE_URL = "https://strangers-things.herokuapp.com/api/";
 
-//  const COHORT_NAME = "2202-ftb-et-web-pt";
-//  const API_URL = `BASE_URLCOHORT_NAME`;
+ const COHORT_NAME = "2202-ftb-et-web-pt";
+ const APIURL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 
-const BASE_URL =
-"https://strangers-things.herokuapp.com/api/2202-ftb-et-web-pt";
 // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 const USER_LOGIN = '/users/login';
 
 const Login = () => {
+  const history = useHistory();
   const [user, setUsername] = useState("");
   const [pass, setPassword] = useState("");
-  const history = useHistory();
   
   const handleSubmit = async (event) => {
-    // console.log(BASE_URL + USER_LOGIN);
+    // console.log(APIURL + USER_LOGIN);
     event.preventDefault();
-    await fetch(`${BASE_URL + USER_LOGIN}`, {
+    await fetch(`${APIURL + USER_LOGIN}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
