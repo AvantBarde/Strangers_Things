@@ -9,7 +9,7 @@ import  Posts  from "./components/Posts";
  import  Home  from "./components/Home";
 
 import { API } from "./api/API";
-import "../src/style.css";
+import "../src/style.scss";
 
 const App = () => {
   const [token, setToken] = useState("");

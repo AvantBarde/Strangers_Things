@@ -3,84 +3,83 @@
   margin: 0;
   padding: 0;
   background-color: rgb(60, 57, 57)
-}
-body {
-  font-family: 'Nunito', sans-serif;
-  font-family: 'Open Sans', sans-serif;
+  body {
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+  }
+    li, a {
+      font-weight: 800;
+    }
+    .edit-p {
+      padding: 0px;
+      background: orange;
+      color: black;
+    }
 }
 
-li, a {
-  font-weight: 800;
-}
 
-.edit-p {
-  padding: 0px;
-  background: orange;
-  color: black;
-}
 
 a {
   color: rgb(246, 232, 232);
   text-decoration: none;
   padding: 6px;
+  a:hover {
+    background-color: rgb(54, 54, 54);
+  }
+  #nav-links {
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    color: rgb(107, 105, 105);
+    align-items: center;
+  }
+  #nav-logo {
+    background-color: red;
+    width: 50px;
+  }
+  p {
+    height: 22px;
+    
+  }
+  .post-single-title,
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #seller,
+  .location {
+    font-size: 15px;
+  }
+  .post-single-container {
+    padding: 0px 0px 4px 4px;
+    margin: 5px;
+    box-shadow: 0px 8px;
+  }
+  #title-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  button {
+    height: 30px;
+    color: white;
+    margin-top: 1px;
+    font-family: "Playfair Display", serif;
+    font-family: "Source Code Pro", monospace;
+  }
   
   
 }
 
-a:hover {
-  background-color: rgb(54, 54, 54);
-}
-
-#nav-links {
-  height: 50px;
-  background-color: black;
-  display: flex;
-  justify-content: space-around;
-  color: rgb(107, 105, 105);
-  align-items: center;
-}
 
 
-#nav-logo {
-  background-color: red;
-  width: 50px;
-}
 
-p {
-  height: 22px;
-  
-}
 
-.post-single-title,
-h2 {
-  font-size: 20px;
-  font-weight: bold;
-}
 
-#seller,
-.location {
-  font-size: 15px;
-}
 
-.post-single-container {
-  padding: 0px 0px 4px 4px;
-  margin: 5px;
-  box-shadow: 0px 8px;
-}
 
-#title-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
-button {
-  height: 30px;
-  color: white;
-  margin-top: 1px;
-  font-family: "Playfair Display", serif;
-  font-family: "Source Code Pro", monospace;
-}
 
 button:hover {
   cursor: pointer;
@@ -120,7 +119,7 @@ input {
 }
 
 #inbox {
-  background-color: #455050;
+  background-color: #fdfdfd;
   margin-top: 0px;
   border-top-left-radius: 1.5px;
   border-top-right-radius: 1.5px;
