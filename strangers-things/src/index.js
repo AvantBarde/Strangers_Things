@@ -64,7 +64,7 @@ const App = () => {
         )}
         {!userData.username && <p>Welcome to Stranger's Things</p>}
       </div>
-      <NavigationBar token={token} />
+      <NavigationBar token={token} userData={userData} />
 
       <Switch>
         <Route exact path="/"></Route>
@@ -76,10 +76,11 @@ const App = () => {
           <Home userData={userData} token={token} />
         </Route>
         <Route path="/posts/new">
-          <NewPosts token={token} setPosts={setPosts} posts={posts} action="add" />
+          <NewPosts token={token} userData = {userData} setPosts={setPosts} posts={posts} action="add" />
         </Route>
+        {/* Use useParams to dynamically set value of postId */}
         <Route path="/posts/:postId/edit">
-          <NewPosts token={token} setPosts={setPosts} posts={posts} action="edit" />
+          <NewPosts token={token} setPosts={setPosts} posts={posts} userData={userData} action="edit" />
         </Route>
         {/* Using :postId in my use Params to access dynamic route value  */}
         <Route path="/posts/:postId">

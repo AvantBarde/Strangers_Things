@@ -43,14 +43,12 @@ const Posts = (props) => {
     const API_URL = `/posts/${postId}`;
     // e.preventDefault();
     try {
-      //API from my api page
-      await API({
-        url: API_URL,
-        method: cruD,
-        token: token,
+      //API with key value pairs including token value for Bearer token
+      await API({ url: API_URL, method: cruD, token: token,
       });
       //filter the posts 
       const remainingPosts = posts.filter((mypost) => mypost._id !== postId);
+      // setting remainingPosts to posts that don't match my most id'
       setPosts(remainingPosts);
       console.log(posts)
     } catch (error) {
@@ -66,14 +64,15 @@ const Posts = (props) => {
             setSearchTerm(event.target.value);
           }} ></input>
       </div>
-      {displayingPosts.length ? (
+      {displayingPosts || displayingPosts.length ? (
         displayingPosts.map((mypost) => (
           
           <div className="mypost-info" key={mypost._id} style={{ border: "2px solid black" }}>
             <div id="title-button">
               <span className="mypost-title">{mypost.title}</span>
               {localStorage.token ? 
-              <button onClick={() => history.push(`/posts/${mypost._id}`)}> Tell me more!</button>
+              <button onClick={
+                () => history.push(`/posts/${mypost._id}`)}> Tell me more!</button>
               :
               <p>Please Log in to see more!</p>
               }

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 const NavigationBar = (props) => {
-  const { token } = props
+  const { token, userData } = props
   const history = useHistory();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log(userData)
   
   useEffect(() => {
     //If there's a token in localStorage, isLoggedIn is true
@@ -12,7 +13,6 @@ const NavigationBar = (props) => {
   }, [token]);
   console.log({Loggedin: isLoggedIn})
   return (
-    <div id="nav-bar">
       <div id="nav-links"> 
           <Link to="/posts">View Posts from Strangers!</Link>
         <div>
@@ -32,7 +32,7 @@ const NavigationBar = (props) => {
           )}
         </div>
       </div>
-    </div>
+
   );
 };
 

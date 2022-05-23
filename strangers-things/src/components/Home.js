@@ -7,7 +7,9 @@ const Home = (props) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    //update the user data state 
     setPosts(userData.posts);
+    //render when userData is updated
   }, [userData]);
 
   const handleSubmit = async (postId) => {
@@ -18,7 +20,9 @@ const Home = (props) => {
         method: "delete",
         token: token,
       });
+      //filter out posts that i plan to delete
       const remainingPosts = posts.filter((post) => post._id !== postId);
+      //set the posts state to the posts that are not deleted
       setPosts(remainingPosts);
     } catch (error) {
       console.error(error);

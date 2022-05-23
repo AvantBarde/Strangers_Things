@@ -3,14 +3,13 @@ import { API } from "../api/API";
 //UseParams dynamically changes the route paramater of a route path
 // Recall from here: https://stackoverflow.com/questions/60998386/using-the-useparams-hook-in-react
 import { useHistory, useParams } from "react-router-dom";
-import { isCompositeComponent } from "react-dom/test-utils";
 
 const NewPosts = (props) => {
   const { token, setPosts, posts, action } = props;
   const history = useHistory();
+  
   const { postId } = useParams();
   console.log({postId})
-  
   //storing route parameters in a variable to use to choose which posts I can edit
   const [newPost, setNewPost] = useState({ description: "", price: "", location: "", title: "",  willDeliver: false,
   });
